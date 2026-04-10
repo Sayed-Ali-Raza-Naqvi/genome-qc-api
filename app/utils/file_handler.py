@@ -32,10 +32,10 @@ async def save_upload_to_temp(file: UploadFile) -> str:
     temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=ext)
 
     try:
-        tempfile.write(contents)
-        tempfile.flush()
+        temp_file.write(contents)
+        temp_file.flush()
     finally:
-        tempfile.close()
+        temp_file.close()
 
     logger.info(f"Saved uploaded file to temporary location: {temp_file.name}")
     
