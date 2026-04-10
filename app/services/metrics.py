@@ -82,6 +82,7 @@ def analyze_records(records: list[SeqRecord], file_format: str) -> dict:
     return {
         "total_records": len(records),
         "total_sequences": len(sequences),
+        "gc_content_per_seq": gc_content_per_seq,
         "mean_gc_content": mean_gc_content,
         "length_stats": length_stats,
         "quality_stats": quality_stats
