@@ -17,6 +17,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(router)
+app.include_router(router, prefix="/api/v1")
 
 logger.info("Application startup complete. Ready to accept requests.")
+
+
+@router.get("/")
+async def root():
+    return {"message": "Welcome to the Genomic Sequence Analyzer API. Use /analyze to upload your files."}
