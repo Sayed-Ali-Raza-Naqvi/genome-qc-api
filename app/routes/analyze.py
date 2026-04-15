@@ -12,10 +12,6 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
-@router.get("/")
-async def root():
-    return {"message": "Welcome to the Genomic Sequence Analyzer API. Use /analyze to upload your files."}
-
 
 @router.get("/health", response_model=HealthResponse)
 async def health_check():
